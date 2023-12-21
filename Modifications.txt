@@ -1,0 +1,44 @@
+create table students(id int(11) auto_increment primary key, roll varchar(20), name varchar(20), email varchar(20), gender varchar(20), contact varchar(20), dob varchar(10), address varchar(20));
+
+create table users(id int(11) auto_increment primary key, f_name varchar(100), l_name varchar(100), contact varchar(100), email varchar(100), securityQ varchar(100), securityA varchar(100), password varchar(100), UserType varchar(100));
+
+
+create table register(username varchar(30), emailid varchar(30), password varchar(30), confirmpassword varchar(30));
+
+    def admin_screen(self):
+        Frame_login = Frame(self.root, bg="white")
+        Frame_login.place(x=0, y=0, height=700, width=1366)
+        label1 = Label(Frame_login, text="Welcome, Admin!",
+                       font=('times new roman', 32, 'bold'),
+                       fg="black", bg='white')
+        label1.place(x=500, y=100)
+        btn2 = Button(Frame_login, text="Logout", command=self.loginform, cursor="hand2",
+                      font=("times new roman", 15), fg="white", bg="orangered",
+                      bd=0, width=15, height=1)
+        btn2.place(x=1000, y=10)
+
+    def moderator_screen(self):
+        Frame_login = Frame(self.root, bg="white")
+        Frame_login.place(x=0, y=0, height=700, width=1366)
+        label1 = Label(Frame_login, text="Welcome, Moderator!",
+                       font=('times new roman', 32, 'bold'),
+                       fg="black", bg='white')
+        label1.place(x=460, y=100)
+        btn2 = Button(Frame_login, text="Logout", command=self.loginform, cursor="hand2",
+                      font=("times new roman", 15), fg="white", bg="orangered",
+                      bd=0, width=15, height=1)
+        btn2.place(x=1000, y=10)
+
+    CREATE TABLE users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        email VARCHAR(255) NOT NULL,
+        password VARCHAR(255) NOT NULL,
+        u_name VARCHAR(255) NOT NULL,
+        question VARCHAR(255) NOT NULL,
+        answer VARCHAR(255) NOT NULL
+
+ALTER TABLE users ADD COLUMN UserType VARCHAR(50);
+
+ALTER TABLE users MODIFY COLUMN securityQ VARCHAR(100);
+
+create table tasks(task_id int(11) auto_increment primary key, task_name varchar(100), subject varchar(100), due_date varchar(100), priority varchar(100), status varchar(100), notes varchar(100));
